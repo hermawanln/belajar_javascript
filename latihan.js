@@ -2,6 +2,8 @@
 Untuk compile bisa ke jsfiddle.net
 "" string kosong otomatis dikonversi jadi false tp kalau ada isinya dikonversi jadi true
 [] string array kosong dianggap true
+TIPS PENGGUNAAN ASYNCRONOUS, MISAL FUNGSI KE 2 BUTUH DATA DARI HASIL FUNGSI KE 1 MAKA FUNGSI KE 2 DIMASUKAN SAJA KE DALAM FUNGSI KE 1
+AGAR SETELAH FUNGSI KE 1 SELESAI DI PROSES MAKA FUNGSI KE 2 BARU AKAN DI PROSES
 **/
 
 
@@ -79,13 +81,13 @@ function checktrue(data){
   })
 }
 //cara memanggil Promise
-checktrue(false) //ganti true atau false untuk mengeluarkan true or false
+checktrue(true) //ganti true atau false untuk mengeluarkan true or false
         .then(function(hasil){
           console.log("dari then");
           console.log(hasil);
+          console.log("Selesai");
         })
         .catch(function(hasil){
           console.log("dari catch");
           console.log(hasil);
         })
-console.log("Selesai");
