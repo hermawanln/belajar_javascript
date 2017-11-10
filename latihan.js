@@ -45,3 +45,47 @@ function calc(x,y,callback){
   return callback(x,y)
 }
 console.log("Hasil anonimous function "+calc(2,3,function(x,y){return x+y}));
+
+//HIGER ORDER FUNCTION
+console.log("*****HIGER ORDER FUNCTION*****");
+var jenisPohon = [
+  {name:"padi",akar:"serabut"},
+  {name:"jeruk",akar:"tunggang"},
+  {name:"jagung",akar:"serabut"},
+  {name:"mangga",akar:"tunggang"},
+]
+
+var tunggang = jenisPohon.filter(function (pohon) {return pohon.akar == "tunggang"})
+
+
+var tunggang = []
+for(var i = 0; i<jenisPohon.length;i++){
+  if(jenisPohon[i].akar=="tunggang"){
+    tunggang.push(jenisPohon[i])
+  }
+}
+console.log(tunggang)
+
+//PROMISE
+console.log("*****PROMISE*****");
+
+function checktrue(data){
+  return new Promise(function(resolve, reject){
+    if (data) {
+      resolve("truthy")
+    }else {
+      reject("falsy")
+    }
+  })
+}
+//cara memanggil Promise
+checktrue(false) //ganti true atau false untuk mengeluarkan true or false
+        .then(function(hasil){
+          console.log("dari then");
+          console.log(hasil);
+        })
+        .catch(function(hasil){
+          console.log("dari catch");
+          console.log(hasil);
+        })
+console.log("Selesai");
